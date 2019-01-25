@@ -18,13 +18,17 @@ public class Game extends javax.swing.JFrame {
     public Game() {
         initComponents();
     }
-    //carrying username across frame
+    /**
+     * As the frame switches the username goes with it
+     * @param para = the method recoginzes the username inputted before
+     * @return the name as a string
+     */
     public Game(String para) {
         initComponents();
         final String USER = para;
         userGrab.setText(USER);
         welcome.setText("Welcome " + USER + " good luck in your game!");
-
+        
     }
 
     //player score integer
@@ -89,6 +93,7 @@ public class Game extends javax.swing.JFrame {
         quesNum1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
+        menu1 = new javax.swing.JButton();
 
         userGrab.setText("jLabel2");
 
@@ -151,8 +156,15 @@ public class Game extends javax.swing.JFrame {
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
-        jTextArea1.setText("You have opened the game\nportion of this program! To \nstart the game simply press the \nquestion button. This will \nassign you a question, put your \nanswer to that question in the\nslot below. When you are ready \nto check your answer hit the \ncheck button. If correct your \nscore will go up and you will \nget a \"Correct!\" message. If you\nare wrong though youre score\nwill revert to 0 and you will \nbe given an \"Incorrect.\" message.\nGood luck and have fun!\nNote: All answers are one word \nor number for simplicity and\nare also case sensitive.");
+        jTextArea1.setText("You have opened the game\nportion of this program! To \nstart the game simply press the \nquestion button. This will \nassign you a question, put your \nanswer to that question in the\nslot below. When you are ready \nto check your answer hit the \ncheck button. If correct your \nscore will go up and you will \nget a \"Correct!\" message. If you\nare wrong though your score\nwill revert to 0 and you will \nbe given an \"Incorrect.\" message.\nGood luck and have fun!\nNote: All answers are one word \nor number for simplicity and\nare also case sensitive.");
         jScrollPane1.setViewportView(jTextArea1);
+
+        menu1.setText("Menu");
+        menu1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menu1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -194,6 +206,9 @@ public class Game extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 448, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(353, 353, 353))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(menu1))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -222,7 +237,9 @@ public class Game extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(check)
                     .addComponent(play))
-                .addGap(46, 46, 46)
+                .addGap(13, 13, 13)
+                .addComponent(menu1)
+                .addGap(10, 10, 10)
                 .addComponent(statement)
                 .addGap(63, 63, 63)
                 .addComponent(menu))
@@ -238,9 +255,7 @@ public class Game extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 622, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -294,13 +309,6 @@ public class Game extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_playActionPerformed
-
-    private void menuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuActionPerformed
-        String user = userGrab.getText();
-        //go back to menu (visibility, username remembering, etc)
-        new Main(user).setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_menuActionPerformed
 
     private void checkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkActionPerformed
         //finding answers
@@ -387,6 +395,17 @@ public class Game extends javax.swing.JFrame {
 
     }//GEN-LAST:event_checkActionPerformed
 
+    private void menuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuActionPerformed
+        
+    }//GEN-LAST:event_menuActionPerformed
+
+    private void menu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu1ActionPerformed
+        final String USER = userGrab.getText();
+        //holding username and setting up menu return
+        new Main(USER).setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_menu1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -437,6 +456,7 @@ public class Game extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JButton menu;
+    private javax.swing.JButton menu1;
     private javax.swing.JButton play;
     private javax.swing.JTextArea quesIn;
     public javax.swing.JLabel quesNum1;

@@ -43,10 +43,7 @@
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-          </Group>
+          <Component id="jPanel1" min="-2" pref="622" max="-2" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -112,6 +109,10 @@
                   <Component id="jLabel1" min="-2" pref="448" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="353" max="-2" attributes="0"/>
               </Group>
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  <Component id="menu1" min="-2" max="-2" attributes="0"/>
+              </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
@@ -146,7 +147,9 @@
                       <Component id="check" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="play" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+                  <Component id="menu1" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                   <Component id="statement" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
                   <Component id="menu" min="-2" max="-2" attributes="0"/>
@@ -278,11 +281,19 @@
               <Properties>
                 <Property name="columns" type="int" value="20"/>
                 <Property name="rows" type="int" value="5"/>
-                <Property name="text" type="java.lang.String" value="You have opened the game&#xa;portion of this program! To &#xa;start the game simply press the &#xa;question button. This will &#xa;assign you a question, put your &#xa;answer to that question in the&#xa;slot below. When you are ready &#xa;to check your answer hit the &#xa;check button. If correct your &#xa;score will go up and you will &#xa;get a &quot;Correct!&quot; message. If you&#xa;are wrong though youre score&#xa;will revert to 0 and you will &#xa;be given an &quot;Incorrect.&quot; message.&#xa;Good luck and have fun!&#xa;Note: All answers are one word &#xa;or number for simplicity and&#xa;are also case sensitive."/>
+                <Property name="text" type="java.lang.String" value="You have opened the game&#xa;portion of this program! To &#xa;start the game simply press the &#xa;question button. This will &#xa;assign you a question, put your &#xa;answer to that question in the&#xa;slot below. When you are ready &#xa;to check your answer hit the &#xa;check button. If correct your &#xa;score will go up and you will &#xa;get a &quot;Correct!&quot; message. If you&#xa;are wrong though your score&#xa;will revert to 0 and you will &#xa;be given an &quot;Incorrect.&quot; message.&#xa;Good luck and have fun!&#xa;Note: All answers are one word &#xa;or number for simplicity and&#xa;are also case sensitive."/>
               </Properties>
             </Component>
           </SubComponents>
         </Container>
+        <Component class="javax.swing.JButton" name="menu1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Menu"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menu1ActionPerformed"/>
+          </Events>
+        </Component>
       </SubComponents>
     </Container>
   </SubComponents>

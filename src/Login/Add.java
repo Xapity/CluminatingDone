@@ -24,7 +24,11 @@ public class Add extends javax.swing.JFrame {
     public Add() {
         initComponents();
     }
-    //carrying username across
+    /**
+     * As the frame switches the username goes with it
+     * @param para = the method recoginzes the username inputted before
+     * @return the name as a string
+     */
     public Add(String para) {
         initComponents();
         final String USER = para;
@@ -62,6 +66,7 @@ public class Add extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(51, 255, 255));
+        jPanel1.setPreferredSize(new java.awt.Dimension(1249, 700));
 
         jLabel1.setFont(new java.awt.Font("Trebuchet MS", 0, 68)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 255));
@@ -163,7 +168,7 @@ public class Add extends javax.swing.JFrame {
                 .addComponent(enter)
                 .addGap(31, 31, 31)
                 .addComponent(response)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 98, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
                 .addComponent(menu))
         );
 
@@ -186,9 +191,9 @@ public class Add extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void menuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuActionPerformed
-        String user = userGrab.getText();
+        final String USER = userGrab.getText();
         //holding username and setting up menu return
-        new Main(user).setVisible(true);
+        new Main(USER).setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_menuActionPerformed
 
@@ -198,7 +203,7 @@ public class Add extends javax.swing.JFrame {
         FileWriter out;
         BufferedWriter writeFile;
         //different parts to the question
-        String user = userGrab.getText();
+        final String USER = userGrab.getText();
         String question = quesIn.getText();
         String answer = ansIn.getText();
         //wrting out the different parts to the question
@@ -210,7 +215,7 @@ public class Add extends javax.swing.JFrame {
             writeFile.newLine();
             writeFile.write(answer);
             writeFile.newLine();
-            writeFile.write(user);
+            writeFile.write(USER);
             //close file
             writeFile.close();
             out.close();

@@ -144,9 +144,9 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void startActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startActionPerformed
-        String user = nameInput.getText();
+        final String USER = nameInput.getText();
         //holding username across all frames
-        new Main(user).setVisible(true);
+        new Main(USER).setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_startActionPerformed
 

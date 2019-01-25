@@ -15,7 +15,11 @@ public class Main extends javax.swing.JFrame {
     public Main() {
         initComponents();
     }
-
+    /**
+     * As the frame switches the username goes with it
+     * @param para = the method recoginzes the username inputted before
+     * @return the name as a string
+     */
     public Main(String para) {
         initComponents();
         final String USER = para;
@@ -97,7 +101,7 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(add, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(play, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 393, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 387, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(95, 95, 95))
             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -148,16 +152,16 @@ public class Main extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void playActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playActionPerformed
-        String user = userGrab.getText();
+        final String USER = userGrab.getText();
         //moving to game frame
-        new Game(user).setVisible(true);
+        new Game(USER).setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_playActionPerformed
 
     private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
-        String user = userGrab.getText();
+        final String USER = userGrab.getText();
         //moving to archive add screen
-        new Add(user).setVisible(true);
+        new Add(USER).setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_addActionPerformed
 
